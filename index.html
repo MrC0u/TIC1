@@ -4,8 +4,11 @@
     <tittle>RetirementSimulator</tittle>  
 </head>
 <body>
+    <!--SCRIP JS-->
+    
     <div><h1>Calcule su pension</h1></div>
     <div>
+        
         <form id="formulario" action="">
             <div>
                 <label for="edad">Ingrese su Edad: </label>
@@ -49,22 +52,24 @@
             </div>
             <div>
                 <label for="sueldoIpm">Indique su sueldo imponible: </label>
-                <input type="number" placeholder="Sueldo Imponible" id="sueldoIpm">
+                <input type="number" placeholder="Sueldo Imponible" id="sueldoImp">
             </div>
             <div>
                 <label for="PensionEs">Ingrese la pension que espera recibir: </label>
                 <input type="number" placeholder="Pension Esperada" id="PensionEs">
             </div>
             <div>
-                <button type="button">Calcular Pensión</button>
+                <button onclick="pensionMensual()" type="button">Calcular Pensión</button>
             </div>
             <div>
-                    <p> Pension Mensual : <span id="pension" ></span</p>
+                    <p> Pension Mensual : <span id="pension" ></span></p>
         
                     <p> Monto de Ahorro Previsional Voluntario (APV) : <span id="apv" ></span></p>
                     
             </div>
+            
         </form>
+        <script defer src="main.js"></script>
         <div>
             <p>Si necesita saber cual es su fondo actual, ingrese al link de la AFP correspondiente.</p>
             <a href="https://home.afpcapital.cl/">CAPITAL</a>
