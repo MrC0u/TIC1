@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <tittle>RetirementSimulator</tittle>  
+     <link rel="stylesheet" type='text/css' href="style.css">
 </head>
 <body>
     <!--SCRIP JS-->
     
     <div><h1>Calcule su pension</h1></div>
-    <div>
+    <div id="todo">
         
         <form id="formulario" action="">
             <div>
@@ -58,9 +58,9 @@
                 <label for="PensionEs">Ingrese la pension que espera recibir: </label>
                 <input type="number" placeholder="Pension Esperada" id="PensionEs">
             </div>
-            <div>
+            
                 <button onclick="pensionMensual()" type="button">Calcular Pensión</button>
-            </div>
+            
             <div>
                     <p> Pension Mensual : <span id="pension" ></span></p>
         
