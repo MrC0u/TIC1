@@ -1,1 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+div h1{
+    text-align: center;
+}
+.todo{
+    align-items: center;
+}
+body{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    overflow:scroll;
+    background-size: cover;
+}
+form{
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+}
+form div{
+    background:#fff;
+    width:70%;
+    border: black 1px solid;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+form input, form select{
+    float: right;
+    max-width: 200px;
+}
+button{
+    text-align: center;
+    padding:1px 6px;
+    margin-bottom: 2%;
+
+}
+div p, a{
+    margin-left: 3%;
+}
+a{
+    color:#218BD9;
+}
 
