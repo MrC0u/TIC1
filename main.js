@@ -33,51 +33,35 @@ function pensionMensual()
         [3.98,4.16,4.14,-11.22,3.44,3.69,-11.79]
     ];
     
-    
-    if (valueGenero==1){
-        var edadJubilacion= 60;
-        var esperanzaVida=82
-
-        if(valueFondo>0 && valueAFP>0){
-            var pensionMensu = calculoPension(esperanzaVida
-            ,edadJubilacion,sueldoDis,sueldoIMP,Edad,rentabilidad[valueFondo-1][valueAFP-1]);
-
-            if(pensionMensu<pensionEsp){
-                var apvv=calculoAPV(pensionEsp,pensionMensu,esperanzaVida,edadJubilacion,
-                    rentabilidad[valueFondo-1][valueAFP-1],Edad,sueldoDis);
-                document.getElementById("pension").innerHTML=pensionMensu;
-                document.getElementById("apv").innerHTML=apvv;
-
-
-            }else{
-                document.getElementById("pension").innerHTML=pensionMensu;
-                document.getElementById("apv").innerHTML=0;
-            }
-        }       
-
-    }else if(valueGenero==2){
-        var edadJubilacion=65;
-        var esperanzaVida=77;
-        if(valueFondo>0 && valueAFP>0){
-            var pensionMensu = calculoPension(esperanzaVida
-            ,edadJubilacion,sueldoDis,sueldoIMP,Edad,rentabilidad[valueFondo-1][valueAFP-1]);
-
-            if(pensionMensu<pensionEsp){
-                var apvv=calculoAPV(pensionEsp,pensionMensu,esperanzaVida,edadJubilacion,
-                    rentabilidad[valueFondo-1][valueAFP-1],Edad,sueldoDis);
-                document.getElementById("pension").innerHTML=pensionMensu;
-                document.getElementById("apv").innerHTML=apvv;
-
-
-            }else{
-                document.getElementById("pension").innerHTML=pensionMensu;
-                document.getElementById("apv").innerHTML=0;
-            }
+    if( Edad <= 0 || sueldoDis <= 0 || sueldoIMP <= 0 || pensionEsp < 0){
+        alert('Error: No ingrese valores negativos');
+    }else if(sueldoIMP >= "2440000"){
+        alert('Error: El sueldo Imponible no puede superar los 2440000 Pesos.')
+    }else{
+        if (valueGenero==1){
+            var edadJubilacion= 60;
+            var esperanzaVida=82
+        }else if(valueGenero==2){
+            var edadJubilacion=65;
+            var esperanzaVida=77; 
         }
-            
-    
-    }
+        var pensionMensu = calculoPension(esperanzaVida
+        ,edadJubilacion,sueldoDis,sueldoIMP,Edad,rentabilidad[valueFondo-1][valueAFP-1]);
 
+        if(pensionMensu<pensionEsp){
+            var apvv=calculoAPV(pensionEsp,pensionMensu,esperanzaVida,edadJubilacion,
+                rentabilidad[valueFondo-1][valueAFP-1],Edad,sueldoDis);
+            document.getElementById("pension").innerHTML=pensionMensu;
+            document.getElementById("apv").innerHTML=apvv;
+            if(apvv >= 1495000){
+                alert("El monto apv supera el limite (1495000)");
+            }
+
+        }else{
+            document.getElementById("pension").innerHTML=pensionMensu;
+            document.getElementById("apv").innerHTML=0;
+        }       
+    }
 
     //document.write(opcion);
     //document.getElementById("pension").innerHTML=Edad;

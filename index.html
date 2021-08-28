@@ -6,79 +6,112 @@
 <body>
     <!--SCRIP JS-->
     
-    <div><h1>Calcule su pension</h1></div>
-    <div id="todo">
-        
-        <form id="formulario" action="">
-            <div>
-                <label for="edad">Ingrese su Edad: </label>
-                <input type="number" placeholder="Edad" maxlength="2" id="edad">
+    <div class="container">
+        <div><h1>Calcule su Pension</h1></div>
+            <form id="formulario" action="">
+                <div class="preguntas">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="edad">Ingrese su Edad: </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" placeholder="Edad" maxlength="2" id="edad" min="0">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="genero">Ingrese su genero: </label>
+                        </div>
+                        <div class="col-75">
+                            <select name="" id="genero">
+                                <option disabled selected>Seleccione su genero</option>
+                                <option value="1">Mujer</option>
+                                <option value="2">Hombre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="sueldoDis">Indique su sueldo disponible: </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" placeholder="Sueldo disponible" id="sueldoDis" min="0">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="AFP">Indique su AFP</label>
+                        </div>
+                        <div class="col-75">
+                            <select name="" id="AFP">
+                                <option disabled selected>Seleccione su AFP</option>
+                                <option value="1">CAPITAL</option>
+                                <option value="2">CUPRUM</option>
+                                <option value="3">HABITAT</option>
+                                <option value="4">MODELO</option>
+                                <option value="5">PLANVITAL</option>
+                                <option value="6">PROVIDA</option>
+                                <option value="7">UNO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fondo">Ingrese su fondo previsional actual</label>
+                        </div>
+                        <div class="col-75">
+                            <select name="" id="fondo">
+                                <option disabled selected>Seleccione su fondo</option>
+                                <option value="1">Tipo A</option>
+                                <option value="2">Tipo B</option>
+                                <option value="3">Tipo C</option>
+                                <option value="4">Tipo D</option>
+                                <option value="5">Tipo E</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="sueldoIpm">Indique su sueldo imponible: </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" placeholder="Sueldo Imponible" id="sueldoImp" min="0" max="2440192">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="PensionEs">Ingrese la pension que espera recibir: </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" min="0" placeholder="Pension Esperada" id="PensionEs" >
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="boton">
+                    <button onclick="pensionMensual()" type="button">Calcular Pensión</button>
+                </div>
             </div>
-            <div>
-                <label for="genero">Ingrese su genero: </label>
-                <select name="" id="genero">
-                    <option selected>Seleccione su genero</option>
-                    <option value="1">Mujer</option>
-                    <option value="2">Hombre</option>
-                </select>
-            </div>
-            <div>
-                <label for="sueldoDis">Indique su sueldo disponible: </label>
-                <input type="number" placeholder="Sueldo disponible" id="sueldoDis">
-            </div>
-            <div>
-                <label for="AFP">Indique su AFP</label>
-                <select name="" id="AFP">
-                    <option selected>Seleccione su AFP</option>
-                    <option value="1">CAPITAL</option>
-                    <option value="2">CUPRUM</option>
-                    <option value="3">HABITAT</option>
-                    <option value="4">MODELO</option>
-                    <option value="5">PLANVITAL</option>
-                    <option value="6">PROVIDA</option>
-                    <option value="7">UNO</option>
-                </select>
-            </div>
-            <div>
-                <label for="fondo">Ingrese su fondo previsional actual</label>
-                <select name="" id="fondo">
-                    <option selected>Seleccione su fondo</option>
-                    <option value="1">Tipo A</option>
-                    <option value="2">Tipo B</option>
-                    <option value="3">Tipo C</option>
-                    <option value="4">Tipo D</option>
-                    <option value="5">Tipo E</option>
-                </select>
-            </div>
-            <div>
-                <label for="sueldoIpm">Indique su sueldo imponible: </label>
-                <input type="number" placeholder="Sueldo Imponible" id="sueldoImp">
-            </div>
-            <div>
-                <label for="PensionEs">Ingrese la pension que espera recibir: </label>
-                <input type="number" placeholder="Pension Esperada" id="PensionEs">
-            </div>
-            
-                <button onclick="pensionMensual()" type="button">Calcular Pensión</button>
-            
-            <div>
+            <div class="row">
+                <div class="resultados">
                     <p> Pension Mensual : <span id="pension" ></span></p>
         
                     <p> Monto de Ahorro Previsional Voluntario (APV) : <span id="apv" ></span></p>
-                    
+                </div>
             </div>
-            
         </form>
         <script defer src="main.js"></script>
-        <div>
+        <div class="row">
             <p>Si necesita saber cual es su fondo actual, ingrese al link de la AFP correspondiente.</p>
-            <a href="https://home.afpcapital.cl/">CAPITAL</a>
-            <a href="https://www6.cuprum.cl/">CUPRUM</a>
-            <a href="https://www.afphabitat.cl/portalPrivado_FIXWeb/public/login.htm">HABITAT</a>
-            <a href="https://www.afpmodelo.cl/AFP/retiro/default.aspx">MODELO</a>
-            <a href="https://www.planvital.cl/afiliado/inicio">PLANVITAL</a>
-            <a href="https://www.provida.cl/">PROVIDA</a>
-            <a href="https://www.uno.cl/">UNO</a>
+            <div class="links">
+                <a href="https://home.afpcapital.cl/">CAPITAL</a>
+                <a href="https://www6.cuprum.cl/">CUPRUM</a>
+                <a href="https://www.afphabitat.cl/portalPrivado_FIXWeb/public/login.htm">HABITAT</a>
+                <a href="https://www.afpmodelo.cl/AFP/retiro/default.aspx">MODELO</a>
+                <a href="https://www.planvital.cl/afiliado/inicio">PLANVITAL</a>
+                <a href="https://www.provida.cl/">PROVIDA</a>
+                <a href="https://www.uno.cl/">UNO</a>
+            </div>
         </div>
     </div>
 </body>
