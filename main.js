@@ -54,7 +54,7 @@ function pensionMensual()
             document.getElementById("pension").innerHTML=pensionMensu;
             document.getElementById("apv").innerHTML=apvv;
             if(apvv >= 1495000){
-                alert("El monto apv supera el limite (1495000)");
+                alert("El monto apv supera el limite (50 UF)");
             }
 
         }else{
