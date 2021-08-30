@@ -33,7 +33,7 @@ function pensionMensual()
         [3.98,4.16,4.14,-11.22,3.44,3.69,-11.79]
     ];
     
-    if( Edad <= 0 || sueldoDis <= 0 || sueldoIMP <= 0 || pensionEsp < 0){
+    if( Edad < 0 || sueldoDis < 0 || sueldoIMP < 0 || pensionEsp < 0){
         alert('Error: No ingrese valores negativos');
     }else if(sueldoIMP >= "2440000"){
         alert('Error: El sueldo Imponible no puede superar los 2440000 Pesos.')
